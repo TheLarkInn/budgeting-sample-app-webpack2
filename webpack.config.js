@@ -9,11 +9,12 @@ module.exports = {
   context: path.join(__dirname, './client'),
   entry: {
     js: './index.js',
+    fo: 'react-dom',
     vendor: ['react']
   },
   output: {
     path: path.join(__dirname, './static'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     loaders: [
