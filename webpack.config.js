@@ -19,7 +19,7 @@ module.exports = {
     loaders: [
       {
         test: /\.html$/,
-        loader: 'file',
+        loader: 'file-loader',
         query: {
           name: '[name].[ext]'
         }
@@ -27,8 +27,8 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: [
-          'style',
-          'css'
+          'style-loader',
+          'css-loader'
         ]
       },
       {
@@ -42,10 +42,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: [".webpack-loader.js", ".web-loader.js", ".loader.js", ".js", ".jsx"],
     modules: [
-      path.resolve('./client'),
-      'node_modules'
+      path.resolve(__dirname, "node_modules"),
+      path.resolve(__dirname,'./client')
     ]
   },
   plugins: [
@@ -58,15 +58,15 @@ module.exports = {
       minimize: true,
       debug: false
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false
-      },
-      sourceMap: false
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   output: {
+    //     comments: false
+    //   },
+    //   sourceMap: false
+    // }),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
     })

@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server --history-api-fallback --progress --port 3000",
-    "build": "node build.js production"
+    "build": "webpack -p"
   },
   "license": "MIT",
   "devDependencies": {
@@ -20,7 +20,7 @@
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "style-loader": "^0.13.0",
-    "webpack": "^2.1.0-beta.4",
+    "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.0.0-beta"
   },
   "dependencies": {
